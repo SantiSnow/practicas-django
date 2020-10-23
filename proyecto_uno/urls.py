@@ -20,9 +20,4 @@ from proyecto_uno import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.index),
-    path('', views.index),
-    path('about/', views.about),
-    path('contact/', views.contacto),
-    path('perfil/<nombre>', views.usuario),
-    path('edad/<int:edad>', views.edad)
 ]
