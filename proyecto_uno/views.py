@@ -39,3 +39,41 @@ def index(httpRequest):
     vista = template.render(con)
 
     return HttpResponse(vista)
+
+def home(httpRequest):
+    #
+    fecha = datetime.datetime.now()
+    #carga doc
+    doc = open("C:/Users/Santiago/PycharmProjects/proyectos-django/proyecto_uno/proyecto_uno/templates/index.html")
+    #crea el template
+    template = Template(doc.read())
+    #cierra la carga para limpiar memoria
+    doc.close()
+    #crea el contexto
+    con = Context({
+        "fecha": fecha
+    })
+    #renderiza la vista antes de enviarla
+    vista = template.render(con)
+
+    return HttpResponse(vista)
+
+def contacto(httpRequest):
+    Datos = ["santi@gml.com", "@ci_software", "contacto@cisoftware.com", "11223344"]
+    datoBoolean = False
+    #carga doc
+    doc = open("C:/Users/Santiago/PycharmProjects/proyectos-django/proyecto_uno/proyecto_uno/templates/contacto.html")
+    #crea el template
+    template = Template(doc.read())
+    #cierra la carga para limpiar memoria
+    doc.close()
+    #crea el contexto
+    con = Context({
+        "Titulo": "Pagina de contacto",
+        "Datos": Datos,
+        "Info": datoBoolean
+    })
+    #renderiza la vista antes de enviarla
+    vista = template.render(con)
+
+    return HttpResponse(vista)

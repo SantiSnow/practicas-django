@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bienvenido a mi aplicacion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Bienvenido a la pagina de contacto</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <h4>Metodos de contacto:</h4>
+                <br />
+                <ul>
+                {% for i in Datos %}
+    
+                    <li>{{i}}</li>
+    
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            {% if Info %}
+                <p>La informacion enviada concuerda</p>
+            {% else %}
+                <p>La informacion enviada no concuerda</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
